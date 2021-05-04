@@ -1,0 +1,40 @@
+<mat-drawer-container
+  class="dash"
+  (backdropClick)="backdropClick()"
+  hasBackdrop="true"
+>
+  <!-- Search and Autocomplete -->
+  <div>
+    <div class="container">
+      <div class="search" *ngIf="datalist">
+        <h1 class="title">Please search for an Artist or Art Source</h1>
+
+        <app-search
+          [sources]="getAuthorList(datalist)"
+          (newFilter)="filterEventHandler($event)"
+          (newSubmit)="searchEventHandler($event)"
+        ></app-search>
+
+        <p class="results">Found {{ filterlist.length }} results!</p>
+      </div>
+    </div>
+  </div>
+
+  <mat-drawer
+    #drawer
+    mode="side"
+    position="end"
+    class="drawer"
+    [opened]="sidebar"
+    autoFocus="true"
+  >
+    <div class="gallery">
+      <app-gallery-view
+        [imagelist]="imagelist"
+        (imageClickHandler)="dialogEvent($event)"
+      ></app-gallery-view>
+    </div>
+  </mat-drawer>
+
+  <!-- View gallery -->
+</mat-drawer-container>

@@ -1,0 +1,70 @@
+<div fxLayout="row" fxLayoutAlign="left start" fxLayoutGap="0px">
+  <div *ngIf="imagelist.length < 4; then onerow; else tworow"></div>
+
+  <!-- One row -->
+  <ng-template #onerow>
+    <div
+      fxFlex="100%"
+      fxLayout="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="0px"
+    >
+      <div
+        *ngFor="let item of imagelist; let imageIndex = index"
+        class="ImageContainer"
+      >
+        <img
+          id="{{ item.id }}"
+          src="https://picsum.photos/id/{{ item.id }}/{{
+            item.gallery_width
+          }}/{{ item.gallery_height }}"
+          (click)="imageClicked(item)"
+        />
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Two rows -->
+  <ng-template #tworow>
+    <div
+      fxFlex="50%"
+      fxLayout="column"
+      fxLayoutAlign="left start"
+      fxLayoutGap="0px"
+    >
+      <div
+        *ngFor="let item of imagelist; let imageIndex = index"
+        class="ImageContainer"
+      >
+        <img
+          *ngIf="imageIndex % 2 == 1"
+          id="{{ item.id }}"
+          src="https://picsum.photos/id/{{ item.id }}/{{
+            item.gallery_width
+          }}/{{ item.gallery_height }}"
+          (click)="imageClicked(item)"
+        />
+      </div>
+    </div>
+    <div
+      fxFlex="50%"
+      fxLayout="column"
+      fxLayoutAlign="left start"
+      fxLayoutGap="0"
+    >
+      <div
+        *ngFor="let item of imagelist; let imageIndex = index"
+        class="ImageContainer"
+      >
+        <img
+          *ngIf="imageIndex % 2 == 0"
+          id="{{ item.id }}"
+          src="https://picsum.photos/id/{{ item.id }}/{{
+            item.gallery_width
+          }}/{{ item.gallery_height }}"
+          (click)="imageClicked(item)"
+        />
+      </div>
+    </div>
+  </ng-template>
+</div>

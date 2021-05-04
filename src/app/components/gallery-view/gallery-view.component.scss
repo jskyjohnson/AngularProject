@@ -1,0 +1,16 @@
+.ImageContainer {
+  overflow: hidden;
+  width: 100%;
+  display: inline-flex;
+}
+
+img {
+  width: 100%;
+  transition: transform 0.9s ease;
+  transform: scale(
+    1.01
+  ); //fixes a small stuttering issue when hovering over images
+  :hover > & {
+    transform: scale(1.3);
+  }
+}

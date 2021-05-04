@@ -1,0 +1,29 @@
+@import '../../../theme';
+
+.dash{
+  height: 100%;
+  width: 100%;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+
+  .search {
+    padding-top: 30vh;
+    text-align: center;
+
+    .title{
+      padding-bottom: 3vh;
+    }
+
+    .results{
+      padding-top: 25vh;
+    }
+  }
+}
+
+.drawer{
+  width:70%
+}

@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field class="search-input">
+    <mat-label>Artist</mat-label>
+    <div class="search-field">
+      <input
+        type="text"
+        aria-label="Artist"
+        matInput
+        [matAutocomplete]="auto"
+        [formControl]="myControl"
+        (ngModelChange)="onFilterChange()"
+      />
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

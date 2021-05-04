@@ -1,0 +1,18 @@
+<!-- <p>{{ data | json }}</p> -->
+
+<!-- <button>Previous</button> -->
+
+<div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="3vw">
+  <button mat-button (click)="prev()">Prev</button>
+  <div class="image-cont">
+    <img
+      id="{{ data.id }}"
+      src="https://picsum.photos/id/{{ data.id }}/{{ data.original_width }}/{{
+        data.original_height
+      }}"
+    />
+  </div>
+  <button mat-button (click)="next()">Next</button>
+</div>
+
+<!-- <button>Next</button> -->
