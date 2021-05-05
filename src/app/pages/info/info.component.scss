@@ -15,6 +15,21 @@
   height: auto !important;
 }
 
+.nav-btn {
+  top: 0;
+  color: #abcc9a;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  p {
+    font-size: large;
+    margin: -2vh 0 2vh 0;
+    padding: 0;
+  }
+}
+
 .signature {
   height: 5vh;
   width: auto;
@@ -33,10 +48,10 @@
   0% {
     stroke-dashoffset: -1011;
   }
-  45%{
+  45% {
     stroke-dashoffset: 0;
   }
-  65%{
+  65% {
     stroke-dashoffset: 0;
   }
   100% {

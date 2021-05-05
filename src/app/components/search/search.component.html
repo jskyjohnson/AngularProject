@@ -1,5 +1,11 @@
 <form (ngSubmit)="onSubmit()">
-  <mat-form-field class="search-input">
+  <mat-form-field
+    class="search-input"
+    matTooltipPosition="above"
+    matTooltipShowDelay="1000"
+    matTooltipHideDelay="1000"
+    matTooltip="Search will match against authors. Click the Search Button or press enter to commit a search."
+  >
     <mat-label>Artist</mat-label>
     <div class="search-field">
       <input
@@ -10,7 +16,12 @@
         [formControl]="myControl"
         (ngModelChange)="onFilterChange()"
       />
-      <button mat-raised-button color="primary" type="submit">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="search-btn"
+      >
         <mat-icon>search</mat-icon>
       </button>
     </div>

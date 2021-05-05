@@ -1,35 +1,38 @@
-<!-- <p>{{ data | json }}</p> -->
-
-<!-- <button>Previous</button> -->
-
-<div style="background-color: aliceblue">
-  <p>
-    {{ data.index }}
-  </p>
-  <p>
-    {{ data.max }}
-  </p>
-</div>
-
-<div
-  fxLayout="row"
-  fxLayoutAlign="center center"
-  fxLayoutGap="3vw"
-  class="dialog"
->
-  <button mat-fab (click)="prev()">
-    <mat-icon> navigate_before </mat-icon>
-  </button>
-  <div class="image-cont">
-    <img
-      src="https://picsum.photos/id/{{ data.image.id }}/{{
-        data.image.original_width
-      }}/{{ data.image.original_height }}"
-    />
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1vh">
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutGap="3vw"
+    class="dialog"
+  >
+    <button
+      mat-fab
+      (click)="prev()"
+      [disabled]="data.index == 0"
+      color="primary"
+    >
+      <mat-icon> navigate_before </mat-icon>
+    </button>
+    <div class="image-cont">
+      <img
+        src="https://picsum.photos/id/{{ data.image.id }}/{{
+          data.image.original_width
+        }}/{{ data.image.original_height }}"
+      />
+    </div>
+    <button
+      mat-fab
+      (click)="next()"
+      [disabled]="data.index == data.max"
+      color="primary"
+    >
+      <mat-icon> navigate_next </mat-icon>
+    </button>
   </div>
-  <button mat-fab (click)="next()">
-    <mat-icon> navigate_next </mat-icon>
-  </button>
+  <div fxLayout="column" fxLayoutAlign="center center" class="">
+    <h2 class="position">
+      {{ data.index + 1 }} out of {{ data.max + 1 }}
+    </h2>
+    <p class="author-info">By {{ data.image.author }}</p>
+  </div>
 </div>
-
-<!-- <button>Next</button> -->

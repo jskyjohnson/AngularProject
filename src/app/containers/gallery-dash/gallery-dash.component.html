@@ -12,7 +12,7 @@
         <app-search
           [sources]="getAuthorList(datalist)"
           (newFilter)="filterEventHandler($event)"
-          (newSubmit)="searchEventHandler($event)"
+          (newSubmit)="searchEventHandler()"
         ></app-search>
 
         <p class="results">Found {{ filterlist.length }} results!</p>

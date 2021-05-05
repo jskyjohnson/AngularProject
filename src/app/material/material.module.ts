@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MaterialComponents: any = [
   MatButtonModule,
@@ -21,6 +22,7 @@ const MaterialComponents: any = [
   MatDialogModule,
   MatListModule,
   MatBadgeModule,
+  MatTooltipModule,
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="left start" fxLayoutGap="0px">
   <div *ngIf="imagelist.length < 4; then onerow; else tworow"></div>
 
-  <!-- One row -->
+  <!-- One row for small values (4) -->
   <ng-template #onerow>
     <div
       fxFlex="100%"
@@ -16,10 +16,11 @@
         <img
           id="{{ item.id }}"
           src="https://picsum.photos/id/{{ item.id }}/{{
-            item.gallery_width
-          }}/{{ item.gallery_height }}"
+            item.gallery_width * 2
+          }}/{{ item.gallery_height * 2 }}"
           (click)="imageClicked(item)"
         />
+        <p class="author-caption">By {{ item.author }}</p>
       </div>
     </div>
   </ng-template>
@@ -37,13 +38,14 @@
         class="ImageContainer"
       >
         <img
-          *ngIf="imageIndex % 2 == 1"
+          *ngIf="item.column == 1"
           id="{{ item.id }}"
           src="https://picsum.photos/id/{{ item.id }}/{{
             item.gallery_width
           }}/{{ item.gallery_height }}"
           (click)="imageClicked(item)"
         />
+        <p class="author-caption">By {{ item.author }}</p>
       </div>
     </div>
     <div
@@ -57,13 +59,14 @@
         class="ImageContainer"
       >
         <img
-          *ngIf="imageIndex % 2 == 0"
+          *ngIf="item.column == 0"
           id="{{ item.id }}"
           src="https://picsum.photos/id/{{ item.id }}/{{
             item.gallery_width
           }}/{{ item.gallery_height }}"
           (click)="imageClicked(item)"
         />
+        <p class="author-caption">By {{ item.author }}</p>
       </div>
     </div>
   </ng-template>

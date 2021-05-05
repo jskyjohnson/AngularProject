@@ -1,16 +1,38 @@
 .ImageContainer {
+  box-sizing: border-box;
+  position: relative;
   overflow: hidden;
   width: 100%;
+  height: auto;
   display: inline-flex;
+  text-align: center;
+}
+
+.ImageContainer:hover > .author-caption {
+  visibility: visible !important;
+  opacity: 1;
 }
 
 img {
   width: 100%;
-  transition: transform 0.9s ease;
+  transition: all 0.9s ease;
   transform: scale(
     1.005
   ); //fixes a small stuttering issue when hovering over images
   :hover > & {
     transform: scale(1.3);
   }
+}
+
+.author-caption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: .5vh .5vw;
+  transform: translate(-50%);
+  color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s, visibility 0.2s;
 }

@@ -1,7 +1,7 @@
 .image-cont {
   position: relative;
   height: 100%;
-  width: 80%;
+  width: 85%;
   img {
     position: absolute;
     top: 50%;
@@ -15,8 +15,18 @@
 }
 
 .dialog {
-  height: 80vh;
+  height: 90vh;
   width: 80vw;
   display: flex;
   flex-direction: row;
+}
+
+.position {
+  color: #abcc9a;
+}
+
+.author-info {
+  background-color: rgba(#000, 0.1);
+  padding: 0.5vh 0.5vw;
+  color: #f2f2f2;
 }

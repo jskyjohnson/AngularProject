@@ -7,4 +7,5 @@ export interface Imagedata {
   id: number;
   author: string;
   author_url: string;
+  column: number;
 }
