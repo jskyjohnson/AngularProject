@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GalleryViewComponent } from './components/gallery-view/gallery-view.component';
 import { MaterialModule } from './material/material.module';
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogViewComponent } from './components/dialog-view/dialog-view.component';
 
@@ -35,6 +35,7 @@ import { DialogViewComponent } from './components/dialog-view/dialog-view.compon
     ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Imagedata } from 'src/app/core/interfaces/imagedata';
 import { Loremdata } from 'src/app/core/interfaces/loremdata';
 import { ApiService } from 'src/app/core/services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogViewComponent } from 'src/app/components/dialog-view/dialog-view.component';
+import {
+  CdkVirtualScrollViewport,
+  ScrollDispatcher,
+} from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-gallery-dash',
@@ -20,7 +24,13 @@ export class GalleryDashComponent implements OnInit {
 
   currentImage: Imagedata | undefined;
 
-  constructor(private apiService: ApiService, public dialog: MatDialog) {}
+  constructor(
+    private apiService: ApiService,
+    public dialog: MatDialog,
+    public scroll: ScrollDispatcher
+  ) {}
+
+  @ViewChild(CdkVirtualScrollViewport) viewPort!: CdkVirtualScrollViewport;
 
   ngOnInit(): void {
     this.apiService.getList().subscribe((data: any) => (this.datalist = data));
@@ -36,7 +46,7 @@ export class GalleryDashComponent implements OnInit {
   }
 
   searchEventHandler($event: any) {
-    let smaller = 800;
+    let smaller = 600;
     let newImages: Imagedata[] = [];
     this.filterlist.forEach((v) => {
       let ratio = v.height / v.width;
@@ -64,10 +74,13 @@ export class GalleryDashComponent implements OnInit {
   }
 
   dialogEvent(item: Imagedata) {
-    console.log(item.id);
     this.currentImage = item;
     let diag = this.dialog.open(DialogViewComponent, {
-      data: item,
+      data: {
+        image: item,
+        index: this.imagelist.indexOf(this.currentImage),
+        max: this.imagelist.length -1,
+      },
       panelClass: 'full-width-dialog',
     });
 
@@ -86,14 +99,26 @@ export class GalleryDashComponent implements OnInit {
     });
   }
 
-  dialogNextImage(dialog:any) {
-    console.log('Go to next image');
-    dialog.componentInstance.data = this.currentImage;
+  dialogNextImage(dialog: any) {
+    if (this.currentImage) {
+      let indx = this.imagelist.indexOf(this.currentImage);
+      if (indx < this.imagelist.length - 1) {
+        this.currentImage = this.imagelist[indx + 1];
+        dialog.componentInstance.data.image = this.currentImage;
+        dialog.componentInstance.data.index = indx +1;
+      }
+    }
   }
 
-  dialogPrevImage(dialog:any) {
-    console.log('Go to prev image');
-    dialog.componentInstance.data = this.currentImage;
+  dialogPrevImage(dialog: any) {
+    if (this.currentImage) {
+      let indx = this.imagelist.indexOf(this.currentImage);
+      if (indx > 0) {
+        this.currentImage = this.imagelist[indx - 1];
+        dialog.componentInstance.data.image = this.currentImage;
+        dialog.componentInstance.data.index = indx -1;
+      }
+    }
   }
 
   filterEventHandler($event: any) {

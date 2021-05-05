@@ -1,1 +1,130 @@
-<p>info works!</p>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5vh">
+  <a routerLink="/" class="nav-btn" fxFlex>
+    <button fxLayout mat-button class="nav-btn">
+      <mat-icon>expand_less</mat-icon>
+      <p>Back to Gallery</p>
+    </button>
+  </a>
+  <div class="spacer"></div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div
+      fxLayout="column"
+      fxLayoutAlign="start center"
+      fxFlex="70%"
+      class="container"
+    >
+      <div class="spacer"></div>
+      <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="5vh">
+        <h1 class="mat-display-3">Project Info:</h1>
+
+        <p class="mat-display-1">
+          Thank you for taking the time to look at my project!
+        </p>
+
+        <p>
+          Hi Jesse and Kacy, thank you again for giving me the opportunity to
+          interview with Adaptiva! Hopefully my additions to the base project
+          are satisfactory beyond just pulling from the Lorem Picsum api. This
+          was my first time using Angular for anything so please keep that in
+          mind! It was fun though and I think I could get caught up to speed on
+          creating anything required of me in Adaptiva with minimal extra
+          training needed.
+        </p>
+
+        <svg
+          viewBox="0 0 230 80"
+          class="signature"
+          xmlns="https://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            id="sig"
+            d="M220,64c-1-1-6.25,2.35-2.91-4.06,2.25-4,0-6.63-2.51-7.33C198,50.81,201.46,66.71,184.89,65c3.42-3.19,10.92-5.7,15.45-6.88-10.34.73-20.61,5.69-30.37,9.17,2.27-2.81,14.13-9.06,12.42-12.31-5.73.27-20.77,5.7-24.69,3.33a27.48,27.48,0,0,1,8.79-7.43A63.14,63.14,0,0,1,151,63.78c-1-2.91,1.73-7.25,3.19-10.67a74.38,74.38,0,0,0-14,13.58c-.71-6.82,6.23-15.46,1.78-21.24-4.74-.41-9.58,16.35-12.71,20.42,0-4.61.56-50.15,8.76-39.06,1.09,14.46-3.23,23.31-12.88,34.12-1.17,1.3-3,2.68-4.51,1.34-2.5-5.45,2.46-12.52,5.91-16.77a82.81,82.81,0,0,1-14.14,20.2c-2.35-8.76-10.62-17.49-20-12.33-9.88,4.73-7.14,23.68,5.24,15,18.56-9.73,34.37-53.89-.44-47.6-6.46-1.2-92.11,77.14-24,41.64-21.67,6.47-.82-6,2.41-24,1.6-4.72-2.29-10-7.19-7-9.21,5.67-14.9,15.28-21.34,23.71l14-48.63C53,24.84,41,41.17,31.27,58.67c-1.47,3.66-6,8.84-3.6,12.57C37.42,70.66,54.14,53.37,52.29,43,47.06,28.2,24.15,35,16.49,23.44,16.08,12.51,29.77,5,39.5,4.16c30.9,1.94-21.87,48.33-33.16,50"
+          />
+        </svg>
+      </div>
+      <div class="spacer"></div>
+      <div fxLayout="row" fxLayoutGap="4vw" fxFlex>
+        <div fxFlex>
+          <div>
+            <h1 class="mat-subheading-1">Fonts Used:</h1>
+            <p style="padding-left: 3vw">
+              <span class="mat-body-2" style="font-size: 20px"
+                >Montserrat,
+              </span>
+              <span class="mat-title" style="font-size: 20px"
+                >Montserrat Alternative,
+              </span>
+              <span style="font-size: 20px"> Baskerville </span>
+            </p>
+          </div>
+
+          <div>
+            <h1 class="mat-subheading-1">Libraries Used:</h1>
+            <mat-list class="list">
+              <mat-list-item class="list-item"
+                ><a href="https://github.com/angular/flex-layout"
+                  >Angular Flex Layout</a
+                ></mat-list-item
+              >
+              <mat-list-item class="list-item"
+                ><a href="https://material.angular.io"
+                  >Angular Material</a
+                ></mat-list-item
+              >
+              <mat-list-item class="list-item">
+                <a href="https://material.io/icons/">
+                  Material Icons</a
+                ></mat-list-item
+              >
+              <mat-list-item class="list-item">
+                <a href="https://fonts.google.com"
+                  >Google Fonts</a
+                ></mat-list-item
+              >
+            </mat-list>
+          </div>
+        </div>
+        <div fxFlex>
+          <div>
+            <h1>Requirements:</h1>
+
+            <div style="text-align: left">
+              <h1>Adaptiva Engineering</h1>
+              <p>
+                <strong> Front-end Engineer take-home challenge </strong>
+              </p>
+              <ul>
+                <li>Create a gallery using the Lorem Picsum public API</li>
+                <li>
+                  Make an API call to Lorem Picsum's list endpoint to get an
+                  array of photo objects:
+                  <code>https://picsum.photos/list</code>
+                </li>
+                <li>
+                  Filter the response to include only photos by author
+                  'Alejandro Escamilla'
+                </li>
+                <li>
+                  You may load and use any assets you like, except a pre-built
+                  slideshow component or library
+                </li>
+                <li>
+                  At a minimum, users should be able to click to enlarge images
+                  in a modal view and navigate forward / backward between images
+                </li>
+                <li>
+                  Add any additional features or functionality you see fit
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

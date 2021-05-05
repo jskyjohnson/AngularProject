@@ -9,7 +9,10 @@ import { Imagedata } from 'src/app/core/interfaces/imagedata';
   styleUrls: ['./dialog-view.component.scss'],
 })
 export class DialogViewComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Imagedata) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: { image: Imagedata; index: number; max: number }
+  ) {}
 
   prevEvent = new EventEmitter();
   nextEvent = new EventEmitter();
@@ -18,13 +21,11 @@ export class DialogViewComponent implements OnInit {
 
   prev(): void {
     console.log('Previous clicked!');
-    this.prevEvent.emit("Previous");
+    this.prevEvent.emit('Previous');
   }
 
   next(): void {
     console.log('Next clicked!');
-    this.nextEvent.emit("Next");
+    this.nextEvent.emit('Next');
   }
-
-  
 }

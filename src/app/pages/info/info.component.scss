@@ -1,0 +1,45 @@
+.container {
+  padding: 2vh 2vw;
+}
+
+.spacer {
+  margin: 2vh;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  height: auto !important;
+}
+
+.signature {
+  height: 5vh;
+  width: auto;
+  margin-left: auto;
+}
+
+// Stroke length 1010.39
+#sig {
+  stroke: #2c2c2c;
+  stroke-dasharray: 1011;
+  stroke-dashoffset: -1011;
+  animation: dash 12s infinite ease;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: -1011;
+  }
+  45%{
+    stroke-dashoffset: 0;
+  }
+  65%{
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1011;
+  }
+}

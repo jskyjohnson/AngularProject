@@ -2,17 +2,34 @@
 
 <!-- <button>Previous</button> -->
 
-<div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="3vw">
-  <button mat-button (click)="prev()">Prev</button>
+<div style="background-color: aliceblue">
+  <p>
+    {{ data.index }}
+  </p>
+  <p>
+    {{ data.max }}
+  </p>
+</div>
+
+<div
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  fxLayoutGap="3vw"
+  class="dialog"
+>
+  <button mat-fab (click)="prev()">
+    <mat-icon> navigate_before </mat-icon>
+  </button>
   <div class="image-cont">
     <img
-      id="{{ data.id }}"
-      src="https://picsum.photos/id/{{ data.id }}/{{ data.original_width }}/{{
-        data.original_height
-      }}"
+      src="https://picsum.photos/id/{{ data.image.id }}/{{
+        data.image.original_width
+      }}/{{ data.image.original_height }}"
     />
   </div>
-  <button mat-button (click)="next()">Next</button>
+  <button mat-fab (click)="next()">
+    <mat-icon> navigate_next </mat-icon>
+  </button>
 </div>
 
 <!-- <button>Next</button> -->
