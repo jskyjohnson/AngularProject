@@ -1,5 +1,10 @@
 @import "~@angular/material/theming";
 
+main {
+  text-align: center;
+  position: relative;
+}
+
 ::selection {
   background: #abcc9a;
 }

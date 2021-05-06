@@ -15,6 +15,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogViewComponent } from './components/dialog-view/dialog-view.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

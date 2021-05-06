@@ -29,6 +29,8 @@ export class GalleryDashComponent implements OnInit {
 
   //Data functions
   searchEventHandler() {
+    console.log('Search EVent!');
+    console.log('Sidebare is ' + this.sidebar);
     this.imagelist = this.populateImages(this.filterlist);
     this.openSide();
   }
@@ -135,6 +137,7 @@ export class GalleryDashComponent implements OnInit {
     return newImages;
   }
 
+  //So that either row of the side gallery wouldn't get too far out of line.
   calculateColumnPosition(imagelist: Imagedata[]): Imagedata[] {
     let leftColumn = 0;
     let rightColumn = 0;

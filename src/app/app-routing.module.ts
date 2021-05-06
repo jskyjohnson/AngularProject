@@ -5,8 +5,8 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { InfoComponent } from './pages/info/info.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/gallery', pathMatch: 'full' },
-  { path: '', component: GalleryComponent },
+  { path: '', redirectTo: '/gallery', pathMatch: 'full' },
+  { path: 'gallery', component: GalleryComponent },
   { path: 'info', component: InfoComponent },
 ];
 

@@ -15,6 +15,8 @@
     </button>
     <div class="image-cont">
       <img
+        [@changeState]="animationState"
+        (@changeState.done)="animationState = 'done'"
         src="https://picsum.photos/id/{{ data.image.id }}/{{
           data.image.original_width
         }}/{{ data.image.original_height }}"
@@ -29,10 +31,8 @@
       <mat-icon> navigate_next </mat-icon>
     </button>
   </div>
-  <div fxLayout="column" fxLayoutAlign="center center" class="">
-    <h2 class="position">
-      {{ data.index + 1 }} out of {{ data.max + 1 }}
-    </h2>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1px">
+    <h2 class="position">{{ data.index + 1 }} out of {{ data.max + 1 }}</h2>
     <p class="author-info">By {{ data.image.author }}</p>
   </div>
 </div>
